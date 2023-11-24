@@ -10,7 +10,7 @@ namespace FPSSpectate
     {
         private const string modGUID = "5Bit.FPSSpectate";
         private const string modName = "FPSSpectate";
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "1.0.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
