@@ -31,6 +31,11 @@ namespace FPSSpectate.Patches
 
             if (__instance.spectatedPlayerScript != null && firstPerson)
             {
+
+                Transform[] bodyParts = __instance.spectatedPlayerScript.bodyParts;
+                bodyParts[0].localScale = new(0,0,0);
+
+
                 Transform specPivotTransform = __instance.spectateCameraPivot.transform;
                 Transform specVisorTransform = __instance.spectatedPlayerScript.visorCamera.transform;
                 specPivotTransform.position = specVisorTransform.position + specVisorTransform.forward.normalized * SPECTATE_OFFSET;
