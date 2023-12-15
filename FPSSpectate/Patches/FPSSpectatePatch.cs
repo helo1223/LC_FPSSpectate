@@ -10,8 +10,9 @@ namespace FPSSpectate.Patches
     {
 
         private const float SPECTATE_OFFSET = 1.5f;
-        private static bool firstPerson = true;
         private static bool debounced = false;
+
+        public static bool firstPerson = true;
 
         [HarmonyPatch("LateUpdate")]
         [HarmonyPostfix]

@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using BepInEx.Configuration;
 using HarmonyLib;
 using FPSSpectate.Patches;
 
@@ -26,6 +27,9 @@ namespace FPSSpectate
             }
 
             mls = BepInEx.Logging.Logger.CreateLogSource(modGUID);
+
+            ConfigEntry<bool> defaultViewConfig = Config.Bind("Settings", "Default to first person", true, "Whether or not to default to first person when spectating");
+            FPSSpectatePatch.firstPerson = defaultViewConfig.Value;
 
             harmony.PatchAll();
         }
